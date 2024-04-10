@@ -62,6 +62,6 @@ void fundamentals(void) {
 	} while (strcmp(buffer1, "q") != 0); 
 
 	// Print a message indicating the end of the demo.
-	printf(" ***End of Indexing Strings Demo ***\n\n");
+	printf(" ***End of Indexing StringsÂ DemoÂ ***\n\n");
 
 }

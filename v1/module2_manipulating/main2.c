@@ -3,6 +3,6 @@
 int main(void)
 {   
 	// Call the manipulating function defined in the manipulating module
-	tokenizing();
+	manipulating();
 	return 0;
 }

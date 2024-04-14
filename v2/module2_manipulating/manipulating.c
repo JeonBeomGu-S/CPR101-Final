@@ -11,7 +11,7 @@
 
 // Concatenate user-entered strings until 'q' is entered.
 void manipulating (void)  {
-  
+
    // Print start message.
     printf("*** Start of Concatenating Strings Demo ***\n");
 
@@ -41,8 +41,45 @@ void manipulating (void)  {
             printf("Concatenated string is \'%s\'\n", string1);
         }
     } while (strcmp (string1, "q") != 0); // Continue the loop until 'q' is entered.
-  
+
   // Print end message.
     printf("*** End of Concatenating Strings Demo ***\n\n");
-}
 
+
+
+  // V2
+
+  // Print start message.
+      printf("*** Start of Comparing Strings Demo ***\n");
+  // Declare string variables
+      char compare1[BUFFER_SIZE];
+      char compare2[BUFFER_SIZE];
+  // Declare result variable
+      int result;
+  // Comparison loop
+      do  {
+         // Prompt for first string
+           printf("Type the 1st string to compare (q - to quit) :\n");
+           fgets(compare1, BUFFER_SIZE, stdin);
+           compare1[strlen(compare1) - 1] = '\0';
+        // Check if not 'q'
+          if (strcmp(compare1, "q") != 0) {
+             // Prompt for second string
+              printf("Type the 2nd string to compare:\n");
+              fgets(compare2, BUFFER_SIZE, stdin);
+              compare2[strlen(compare2) - 1] = '\0';
+            // Compare strings
+              result = strcmp(compare1, compare2);
+             // Print comparison result
+              if (result < 0)
+                  printf("\'%s\' string is less than \'%s\'\n", compare1, compare2);
+              else if (result == 0)
+                  printf("\'%s\' string is equal to \'%s\'\n", compare1, compare2);
+              else
+                  printf("\'%s\' string is greater than \'%s\'\n", compare1, compare2);
+      }
+  } while (strcmp(compare1, "q") != 0);
+
+  // Print end message
+  printf("*** End of Comparing Strings Demo ***\n\n");
+}

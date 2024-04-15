@@ -38,22 +38,34 @@ void tokenizing (void) {
     printf("*** End of Tokenizing Words Demo ***\n\n");
 
     // V2
+    // print start message
     printf("*** Start of Tokenizing Phrases Demo ***\n");
+    // declare variables
     char phrases[BUFFER_SIZE];
     char* nextPhrase = NULL;
     int phrasesCounter;
     do {
+        // prompt user to input phrases
         printf("Type a few phrases separated by comma (q - to quit):\n");
+        // input the phrases from user
         fgets(phrases, BUFFER_SIZE, stdin);
+        // set the null end of phrases
         phrases[strlen(phrases) - 1] = '\0';
+        // compare phrases with q
         if ((strcmp(phrases, "q") != 0)) {
+            // tokenizing with comma
             nextPhrase = strtok(phrases, ",");
+            // initialize phrases count
             phrasesCounter = 1;
+            // check next phrases is exist
             while (nextPhrase) {   
+                // print each phrase
                 printf("Phrase #%d is \'%s\'\n", phrasesCounter++, nextPhrase);
+                // set next phrase
                 nextPhrase = strtok(NULL, ",");
             }
         }
-    } while (strcmp(phrases, "q") != 0);
+    } while (strcmp(phrases, "q") != 0); // phrases compare with "q"
+    // print end message
     printf("*** End of Tokenizing Phrases Demo ***\n\n");
 }

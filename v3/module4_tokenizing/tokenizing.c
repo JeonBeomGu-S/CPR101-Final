@@ -68,4 +68,36 @@ void tokenizing (void) {
     } while (strcmp(phrases, "q") != 0); // phrases compare with "q"
     // print end message
     printf("*** End of Tokenizing Phrases Demo ***\n\n");
+
+    // V3
+    // print start message
+    printf("*** Start of Tokenizing Setneces Demo ***\n");
+    // declare variables
+    char sentences[BUFFER_SIZE];
+    char* nextSentence = NULL;
+    int sentencesCounter;
+    do {
+        // prompt user to input sentences
+        printf("Type a few sentences separated by dot(q - to quit):\n");
+        // input the sentences from user
+        fgets(sentences, BUFFER_SIZE, stdin);
+        // set the null end of phrases
+        sentences[strlen(sentences) - 1] = '\0';
+        // compare sentences with q
+        if ((strcmp(sentences, "q") != 0)) {
+            // tokenizing with period
+            nextSentence = strtok(sentences, ".");
+            // initialize sentences count
+            sentencesCounter = 1;
+            // check next sentence is exist
+            while (nextSentence) {
+                // print each sentence
+                printf("Sentece #%d is \'%s\'\n", sentencesCounter++, nextSentence);
+                // set next sentence
+                nextSentence = strtok(NULL, ".");
+            }
+        }
+    } while (strcmp(sentences, "q") != 0); // sentences compare with "q"
+    // print end message
+    printf("*** End of Tokenizing Setneces Demo ***\n");
 }

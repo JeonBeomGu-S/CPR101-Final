@@ -79,5 +79,30 @@ printf("*** End of Converting Strings to int Demo ***\n\n"); //This line prints 
     
     
     printf("*** End of Converting Strings to double Demo ***\n\n"); // This line prints a message indicating the end of the conversion demo to the console.
-    // test
+// v3
+    printf("*** Start Of Converting Strings to long Demo ***\n"); // Notify the start of the conversion demo
+    
+    char longString[BUFFER_SIZE]; // Define a character array to store long string
+    
+    long longNumber; // Define a long variable to store the converted number
+    
+    do {
+    
+        printf("Type the long numeric string (q - to quit) :\n"); // Prompt the user to input a numeric string
+    
+        fgets(longString, BUFFER_SIZE, stdin);  // Read the input string
+    
+        longString[strlen(longString) - 1] = '\0'; // Delete the newline character from the input
+    
+        if ((strcmp(longString, "q") != 0)) { // Check if the user wants to quit
+    
+            longNumber = atol(longString); // Convert the string to a long string
+    
+            printf("Converted number is %ld\n", longNumber); // Print the converted long
+    
+        }
+    
+    } while (strcmp(longString, "q") != 0); // Keep repeating until the user wants to quit
+    
+    printf("*** End of Converting Strings to long Demo ***\n\n"); // Notify the end of the conversion demo
 }

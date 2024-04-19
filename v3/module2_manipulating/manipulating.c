@@ -82,4 +82,49 @@ void manipulating (void)  {
 
   // Print end message
   printf("*** End of Comparing Strings Demo ***\n\n");
+
+
+  // V3
+
+  // Start the string searching demo.
+      printf("*** Start of Searching Strings Demo ***\n");
+  // Declare arrays for the haystack and needle strings.
+      char    haystack[BUFFER_SIZE];
+      char    needle[BUFFER_SIZE];
+  // Variable to store the position of the needle in the haystack.
+      char*    occurence = NULL;
+  // Loop to get user input until they enter 'q'.
+      do  {
+        // Ask for a string or 'q' to quit.
+          printf("Type the string (q - to quit):\n");
+         // Get user input for the haystack.
+          fgets(haystack, BUFFER_SIZE, stdin);
+        // Remove the newline character.
+          haystack[strlen(haystack) - 1] = '\0';
+         // Check if input is not 'q'.
+          if (strcmp(haystack, "q") != 0)  {
+             // Ask for a substring.
+              printf("Type the substring:\n");
+            // Get user input for the needle.
+              fgets(needle, BUFFER_SIZE, stdin);
+             // Remove the newline character.
+              needle[strlen(needle) - 1] = '\0';
+             // Find the needle in the haystack.
+              occurence = strstr(haystack, needle);
+            // Print position if found, otherwise print "Not found".
+              if (occurence)
+                  printf("\'%s\' found at %d position\n", needle,
+                            (int) (occurence - haystack));
+              else
+                  printf("Not found\n");
+          }
+        // Continue loop if input is not 'q'.
+      } while (strcmp(haystack, "q") != 0);
+  // End the string searching demo.
+    printf("*** End of Searching Strings Demo ***\n\n");
+
 }
+
+
+
+

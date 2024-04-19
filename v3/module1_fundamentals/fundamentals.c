@@ -93,7 +93,39 @@ void fundamentals(void) {
 
 	// Print a message indicating the end of the demo.
 	printf("*** End of Measuring Strings Demo ***\n\n");
+
+
+	// V3 
+	// This section shows how to copy a string from a source buffer to a destination buffer.
+	printf("*** Start of Copying Strings Demo***\n");
+	char destination[BUFFER_SIZE];
+	char  source[BUFFER_SIZE];
+	do {
+		// Reset destination string to empty.
+		destination[0] = '\0';
+		printf("Destination string is reset to empty\n");
+
+		// Prompt for the source string; quit with 'q'.
+		printf("Type the source string (q - to quit) : \n");
+		// Read the source string from user input
+		fgets(source, BUFFER_SIZE, stdin);     
+
+		// Clean the newline character.
+		source[strlen(source) - 1] = '\0';	
+
+		// Copy the source string to the destination buffer.
+		if (strcmp(source, "q") != 0) {              
+
+			// Copy the source string to the destination buffer
+			strcpy(destination, source);        
+			printf("New destination string is \'%s\'\n", destination);
+		}
+	} while (strcmp(source, "q") != 0); // Loop until the user inputs 'q'
+	printf("*** End of Copying Strings Demo ***\n\n");
+
 }
+
+
 
 
 
